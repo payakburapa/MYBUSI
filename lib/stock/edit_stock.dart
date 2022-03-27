@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:mybusi/stock/add_button.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
+import 'package:mybusi/stock/add-edit_cate.dart';
 
 
 class EditStock extends StatefulWidget {
@@ -208,7 +209,9 @@ class _TabEditStock extends State<EditStock> {
                                 textStyle: const TextStyle(fontSize: 18),
                               ),
                               onPressed: () {
-
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => AddEditCate()),);
                               },
                               child: const Text('เพิ่ม/แก้ไข',style: TextStyle(fontWeight: FontWeight.bold,)),
                             ),
