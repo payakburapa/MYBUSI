@@ -1,3 +1,4 @@
+//คลังสินค้า
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:mybusi/stock/add_button.dart';
@@ -620,14 +621,30 @@ class _TabEditStock extends State<EditStock> {
           ],
         ),
       ),
-      bottomNavigationBar: new Theme(
-          data: Theme.of(context).copyWith(),
-          child:Row(
-            children: [
-              AddButton()  //ปุ่ม Add
-            ],
+      // bottomNavigationBar: new Theme(
+      //     data: Theme.of(context).copyWith(),
+      //     child:Row(
+      //       children: [
+      //         AddButton()  //ปุ่ม Add
+      //       ],
+      //     )
+      // ),
+      bottomNavigationBar: Row(
+        children: [
+          Container(
+            alignment: Alignment.center,
+              constraints: BoxConstraints.expand(
+                width: MediaQuery.of(context).size.width * 1,
+                height: MediaQuery.of(context).size.height * 0.08,
+              ),
+              decoration: BoxDecoration(
+                  color: Colors.green,
+                  border: Border.all(color: Colors.black,width: 2)
+              ),
+              child: Text('+',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,fontSize: 50)),
           )
-      ),
+        ],
+      )
     );
   }
 }

@@ -1,9 +1,10 @@
-//หน้าคลังสินค้า
+//หน้าเพิ่มและแก้ไข category
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mybusi/checkout/button.dart';
 import 'package:mybusi/module/main_page.dart';
-import 'package:mybusi/module/listmenu.dart';
-import 'package:mybusi/stock/edit_stock.dart';
-import 'package:mybusi/stock/report_stock.dart';
+import 'package:mybusi/stock/add_button.dart';
 
 class AddEditCate extends StatelessWidget{
   TabBar get _tabBar => TabBar(
@@ -44,26 +45,77 @@ class AddEditCate extends StatelessWidget{
           child: TabBarView(
             children: <Widget>[
               Container(
-                //child: EditStock(),
-                child: Text('เพิ่ม')
+                child: AddCate(),
               ),
               Container(
-                //child: ReportStock(),
-                child: Text('แก้ไข')
+                child: EditCate(),
               ),
             ],
           ),
         ),
-        bottomNavigationBar: new Theme(
-            data: Theme.of(context).copyWith(),
-            child:Row(
-              children: [
-                //Calendar(),
-                //Button()
-              ],
-            )
+      ),
+    );
+  }
+}
+
+class AddCate extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Column(
+          children: [
+            SizedBox(height: MediaQuery.of(context).size.height*0.05),
+            Text("เพิ่มหมวดหมู่สินค้า",style:TextStyle(fontWeight:FontWeight.bold,fontSize: 18)),
+            Container(
+              padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+              width: MediaQuery.of(context).size.width * 0.7,
+              height: MediaQuery.of(context).size.height * 0.06,
+              child: TextField(
+                //initialValue: '200',
+                decoration: InputDecoration(
+                  // labelText: 'Label text',
+                  // errorText: 'Error message',
+                  border: OutlineInputBorder(),
+                  // suffixIcon: Icon(
+                  //   Icons.error,
+                  // ),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
+      bottomNavigationBar: Row(
+        children: <Widget>[
+          Container(
+            constraints: BoxConstraints.expand(
+              width: MediaQuery.of(context).size.width * 1,
+              height: MediaQuery.of(context).size.height * 0.08,
+            ),
+            decoration: BoxDecoration(
+                color: Colors.green,
+                border: Border.all(color: Colors.black,width: 2)
+            ),
+            child: TextButton(
+              style: TextButton.styleFrom(
+                padding: const EdgeInsets.only(left: 0.0,top: 0.0,right: 0.0,bottom: 0.0),
+              ),
+              onPressed: () {  },
+              child: Text("+" , style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,fontSize: 50))
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class EditCate extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+
     );
   }
 }
