@@ -245,10 +245,13 @@ class _TabEditStock extends State<EditStock> {
                       height: MediaQuery.of(context).size.height * 0.06,
                       child: TextFormField(
                         //initialValue: '200',
+                        //controller: _controller,//ตัวแปรรับค่าจากการ key
+                        keyboardType: TextInputType.number,
                         decoration: InputDecoration(
                           // labelText: 'Label text',
                           // errorText: 'Error message',
                           border: OutlineInputBorder(),
+
                           // suffixIcon: Icon(
                           //   Icons.error,
                           // ),
@@ -296,6 +299,8 @@ class _TabEditStock extends State<EditStock> {
                       height: MediaQuery.of(context).size.height * 0.06,
                       child: TextFormField(
                         //initialValue: '200',
+                        //controller: _controller,//ตัวแปรรับค่าจากการ key
+                        keyboardType: TextInputType.number,
                         decoration: InputDecoration(
                           // labelText: 'Label text',
                           // errorText: 'Error message',
@@ -346,7 +351,11 @@ class _TabEditStock extends State<EditStock> {
                       width: MediaQuery.of(context).size.width * 0.7,
                       height: MediaQuery.of(context).size.height * 0.06,
                       child: TextFormField(
+                        showCursor: false,
+                        readOnly: true,
                         //initialValue: '200',
+                        //controller: _controller,//ตัวแปรรับค่าจากการ key
+                        keyboardType: TextInputType.number,
                         decoration: InputDecoration(
                           // labelText: 'Label text',
                           // errorText: 'Error message',
@@ -388,6 +397,8 @@ class _TabEditStock extends State<EditStock> {
                       height: MediaQuery.of(context).size.height * 0.06,
                       child: TextFormField(
                         //initialValue: '200',
+                        //controller: _controller,//ตัวแปรรับค่าจากการ key
+                        keyboardType: TextInputType.number,
                         decoration: InputDecoration(
                           // labelText: 'Label text',
                           // errorText: 'Error message',
